@@ -26,6 +26,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(morgan("dev"));
 app.use("/api", router);
 
+app.get("/", (req, res) => {
+  res.send("Welcome to fitness app server!");
+});
+
 app.listen(PORT, () => {
   console.log("Server running of port " + PORT);
 });
